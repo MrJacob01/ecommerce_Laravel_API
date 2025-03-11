@@ -14,13 +14,13 @@ class AttributeSeeder extends Seeder
     public function run(): void
     {
         Attribute::create(['name' => 
-            ["en"=>"color", "uz"=>"rang"]
+            ["en"=>"Type", "uz"=>"Turi"]
         ]);
         Attribute::create([
             'name' => ["en"=>"size", "uz"=>"o'lcham"]
         ]);
         Attribute::create([
-            'name' => ["en"=>"material", "uz"=>"material"]
+            'name' => ["en"=>"export", "uz"=>"import"]
         ]);
     }
 }

@@ -34,7 +34,26 @@ class ProductSeeder extends Seeder
                 ])
                 
             ]);
+            $product->stocks()->create([
+                "quantity"=>rand(2, 15),
+                "attributes"=> json_encode([
+                    [
+                        "attribute_id"=>1,
+                        "value_id"=>2
+                    ],
+                    [
+                        "attribute_id"=>2,
+                        "value_id"=>2
+                    ],
+                    [
+                        "attribute_id"=>3,
+                        "value_id"=>1
+                    ]
+                ])
+                
+            ]);
         }
+        
 
     }
 }

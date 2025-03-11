@@ -15,8 +15,8 @@ class ValueSeeder extends Seeder
         Value::create([
             "attribute_id"=>1,
             "name"=>[
-                'uz'=>"qizil",
-                'en'=>"red"
+                'uz'=>"Kola",
+                'en'=>"Cola"
             ],
 
         ]);
@@ -31,8 +31,8 @@ class ValueSeeder extends Seeder
         Value::create([
             "attribute_id"=>3,
             "name"=>[
-                'uz'=>"Dsp",
-                'en'=>"DSP"
+                'uz'=>"amerika",
+                'en'=>"american"
             ],
 
         ]);
