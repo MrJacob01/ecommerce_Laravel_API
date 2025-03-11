@@ -14,26 +14,26 @@ class ValueSeeder extends Seeder
     {
         Value::create([
             "attribute_id"=>1,
-            "name"=>json_encode([
+            "name"=>[
                 'uz'=>"qizil",
                 'en'=>"red"
-            ]),
+            ],
 
         ]);
         Value::create([
             "attribute_id"=>2,
-            "name"=>json_encode([
+            "name"=>[
                 'uz'=>"Katta",
                 'en'=>"Big"
-            ]),
+            ],
 
         ]);
         Value::create([
             "attribute_id"=>3,
-            "name"=>json_encode([
+            "name"=>[
                 'uz'=>"Dsp",
                 'en'=>"DSP"
-            ]),
+            ],
 
         ]);
     }

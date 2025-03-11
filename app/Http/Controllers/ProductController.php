@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
-
+use App\Http\Resources\ProductResource;
 
 class ProductController extends Controller
 {
@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return Product::with('stocks')->get();
+        return ProductResource::collection(Product::cursorPaginate(7));
     }
 
     /**
@@ -36,9 +36,9 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        return Product::with('stocks')->find($id);
+        return new ProductResource($product);
     }
 
     /**

@@ -18,15 +18,15 @@ class ProductFactory extends Factory
     {
         return [
             "category_id"=>1,
-            "name"=>json_encode([
+            "name"=>[
                 'uz'=>fake()->sentence(2),
-                'en'=>fake()->sentence(2)
-            ]),
+                'en'=>fake()->sentence(2),
+            ],
             "price"=>50,
-            "description"=>json_encode([
+            "description"=>[
                 'uz'=>fake()->text(60),
-                'en'=>fake()->text(60)
-            ]),
+                'en'=>fake()->text(60),
+            ],
         ];
     }
 }
