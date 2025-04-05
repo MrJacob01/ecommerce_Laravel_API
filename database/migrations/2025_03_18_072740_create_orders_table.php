@@ -17,8 +17,9 @@ return new class extends Migration
             $table->string('comment')->nullable();
             $table->foreignId('delivery_method_id')->constrained();
             $table->foreignId('payment_type_id')->constrained();
+            $table->foreignId('status_id')->default(1)->constrained();
             $table->float('total');
-            $table->json('address')->nullable();
+            $table->json('address');
             $table->json('products');
             $table->timestamps();
         });

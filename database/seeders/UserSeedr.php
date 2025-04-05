@@ -26,6 +26,17 @@ class UserSeedr extends Seeder
         ]);
         $user->roles()->attach(1);
 
+        $user1 = User::create([
+            'username'=>'qosim',
+            'firstname'=>'qosimov',
+            'lastname'=>'qosim',
+            'email'=>'qosim@gmail.com',
+            'phone'=>'+99891676246',
+            'password'=>Hash::make('password'),
+
+        ]);
+        $user1->roles()->attach(2);
+
 
         User::factory()->count(10)->hasAttached(Role::find(1))->create();
 
