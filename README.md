@@ -1,5 +1,5 @@
 # Ecommerce Backend API
-<img src="Scheme.png" alt="UI Screenshot" width="800" height="400">
+<img src="Ecommerce project.drawio.png" alt="UI Screenshot" width="800" height="400">
 
 Welcome to the **Ecommerce Backend API** repository for mid-level PHP
 
