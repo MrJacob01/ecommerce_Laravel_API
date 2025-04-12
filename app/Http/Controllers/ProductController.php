@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return ProductResource::collection(Product::cursorPaginate(7));
+        return $this->response(null, [ProductResource::collection(Product::cursorPaginate(7))]);
     }
 
     /**
@@ -38,7 +38,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return new ProductResource($product);
+        return $this->response(null, [new ProductResource($product)]);
     }
 
     /**

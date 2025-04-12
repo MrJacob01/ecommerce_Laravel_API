@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
+use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -37,6 +38,6 @@ class AuthController extends Controller
     }
 
     public function user(Request $request) {
-        return $request->user();
+        return new UserResource($request->user());
     }
 }

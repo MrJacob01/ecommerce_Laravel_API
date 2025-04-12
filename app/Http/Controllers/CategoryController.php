@@ -5,45 +5,33 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use App\Http\Resources\CategoryResource;
 use Illuminate\Database\Eloquent\Collection;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index(): Collection
+
+    public function index()
     {
-        return Category::all();
+        return $this->response(null, [CategoryResource::collection(Category::cursorPaginate(10))]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreCategoryRequest $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(Category $category)
     {
-        return $category;
+        return $this->response(null, [$category]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Category $category)
     {
         //

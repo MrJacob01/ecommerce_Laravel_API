@@ -11,7 +11,7 @@ class StatusOrderController extends Controller
 {
     public function index(Status $status)
     {
-        return $status->orders()->cursorPaginate(10);
+        return $this->response(null, [$status->orders()->cursorPaginate(10)]);
     }
 
 
@@ -21,6 +21,6 @@ class StatusOrderController extends Controller
 
         $order->update(['status_id' => $status->id]);
 
-        return response(['message'=>'status updated']);
+        return $this->success('status updated');
     }
 }

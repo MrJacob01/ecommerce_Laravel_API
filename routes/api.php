@@ -27,16 +27,16 @@ Route::post('logout', [AuthController::class, 'logout']);
 Route::get('user', [AuthController::class, 'user'])->middleware('auth:sanctum');
 
 Route::apiResources([
-    'categories'=>CategoryController::class,
-    'products'=>ProductController::class,
-    'categories.products'=>CategoreProductController::class,
-    'status.orders'=>StatusOrderController::class,
-    'statuses'=>StatusController::class,
-    'favorites'=>FavoriteController::class,
     'orders'=>OrderController::class,
-    'delivery-methods'=>DeliveryMethodController::class,
+    'reviews'=>ReviewController::class,
+    'statuses'=>StatusController::class,
+    'products'=>ProductController::class,
+    'favorites'=>FavoriteController::class,
+    'categories'=>CategoryController::class,
     'payment-type'=>PaymentTypeController::class,
     'user-address'=>UserAddressController::class,
-    'reviews'=>ReviewController::class,
-    'products.reviews'=>ProductReviewController::class
+    'status.orders'=>StatusOrderController::class,
+    'products.reviews'=>ProductReviewController::class,
+    'delivery-methods'=>DeliveryMethodController::class,
+    'categories.products'=>CategoreProductController::class,
 ]);

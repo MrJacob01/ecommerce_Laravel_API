@@ -16,7 +16,7 @@ class UserAddressController extends Controller
 
     public function index()
     {
-        return auth()->user()->addresses()->get();
+        return $this->response(null, [auth()->user()->addresses()->get()]);
     }
 
     /**
@@ -33,6 +33,8 @@ class UserAddressController extends Controller
     public function store(StoreUserAddressRequest $request)
     {
         auth()->user()->addresses()->create($request->toArray());
+
+        return $this->success("address created");
     }
 
     /**

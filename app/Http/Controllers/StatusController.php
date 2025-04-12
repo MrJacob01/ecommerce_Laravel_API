@@ -19,7 +19,7 @@ class StatusController extends Controller
     {
         $status_list = Status::where('for', $request['for'])->get();
 
-        return response(['Message'=>$request['for'], 'list of status'=>$status_list]);
+        return $this->response($request['for'], ['list of status'=>$status_list]);
     }
 
     /**

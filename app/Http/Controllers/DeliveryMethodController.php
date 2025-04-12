@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\delivery_method;
 use App\Http\Requests\Storedelivery_methodRequest;
 use App\Http\Requests\Updatedelivery_methodRequest;
+use App\Http\Resources\DeleveryMethodResource;
 use Illuminate\Database\Eloquent\Collection;
 
 class DeliveryMethodController extends Controller
@@ -12,9 +13,9 @@ class DeliveryMethodController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): Collection
+    public function index()
     {
-        return delivery_method::all();
+        return $this->response(null, [DeleveryMethodResource::collection(delivery_method::cursorPaginate(10))]);
     }
 
     /**

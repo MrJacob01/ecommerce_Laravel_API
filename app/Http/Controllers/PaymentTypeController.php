@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\payment_type;
 use App\Http\Requests\Storepayment_typeRequest;
 use App\Http\Requests\Updatepayment_typeRequest;
+use App\Http\Resources\PaymentTypeResource;
 use Illuminate\Database\Eloquent\Collection;
 
 class PaymentTypeController extends Controller
@@ -12,9 +13,9 @@ class PaymentTypeController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): Collection
+    public function index()
     {
-        return payment_type::all();
+        return $this->response(null, [PaymentTypeResource::collection(payment_type::cursorPaginate(3))]);
     }
 
     /**

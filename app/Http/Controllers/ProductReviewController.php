@@ -19,11 +19,14 @@ class ProductReviewController extends Controller
     {
         $review_ = $product->reviews();
 
-        return response([
-            'total_rate'=>$review_->avg('rate'),
-            'Total_reviews'=>$review_->count(),
-            'list'=>ReviewResource::collection($review_->paginate(10))
-        ]);
+        return $this->success(
+            null,
+            [
+                'total_rate'=>$review_->avg('rate'),
+                'Total_reviews'=>$review_->count(),
+                'list'=>ReviewResource::collection($review_->paginate(10))
+            ]
+            );
     }
 
     public function store(Product $product, StoreReviewRequest $request)
@@ -34,8 +37,6 @@ class ProductReviewController extends Controller
             'rate'=>$request->rate
         ]);
 
-        return response([
-            'message'=>'saved'
-        ]);
+        return $this->response('saved');
     }
 }

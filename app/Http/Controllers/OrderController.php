@@ -58,11 +58,11 @@ class OrderController extends Controller
                 $notFoundsProducts[] = $productRequest;
                 $quantity_in_stocks = $product_items->stocks()->find($productRequest['stock_id'])->quantity;
                 
-                return response([
-                    'message' => "Bu tovardan mavjud emas!",
-                    'not_found_products' => $notFoundsProducts,
-                    'quantity_in_stocks'=>$quantity_in_stocks
-                ]);
+                return $this->error('Bu tovardan mavjud emas!', 
+                    [
+                        'not_found_products' => $notFoundsProducts, 
+                        'quantity_in_stocks'=>$quantity_in_stocks
+                    ]);
             }
         }
         
