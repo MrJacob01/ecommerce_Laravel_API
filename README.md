@@ -2,8 +2,8 @@
 <img src="Ecommerce project.drawio.png" alt="UI Screenshot" width="800" height="400">
 
 
-# APIs on Postman 
-[POSTMAN link](https://documenter.getpostman.com/view/41961386/2sB2iwEZo5) to testing.
+# APIs on Postman Documentation 
+[POSTMAN link](https://documenter.getpostman.com/view/41961386/2sB2iwEZo5).
 
 Welcome to the **Ecommerce Backend API** repository for mid-level PHP
 
