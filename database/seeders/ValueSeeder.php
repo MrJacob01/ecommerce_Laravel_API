@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\Value;
+use App\Models\Attribute;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,24 +12,23 @@ class ValueSeeder extends Seeder
      */
     public function run(): void
     {
-        Value::create([
-            "attribute_id"=>1,
+        $attribute = Attribute::find(1);
+        
+        $attribute->values()->create([
             "name"=>[
                 'uz'=>"Kola",
                 'en'=>"Cola"
             ],
 
         ]);
-        Value::create([
-            "attribute_id"=>2,
+        $attribute->values()->create([
             "name"=>[
                 'uz'=>"Katta",
                 'en'=>"Big"
             ],
 
         ]);
-        Value::create([
-            "attribute_id"=>3,
+        $attribute->values()->create([
             "name"=>[
                 'uz'=>"amerika",
                 'en'=>"american"

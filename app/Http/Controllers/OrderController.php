@@ -24,7 +24,15 @@ class OrderController extends Controller
 
     public function index()
     {
-        return OrderResource::collection(auth()->user()->orders()->paginate(2));
+        if (request()->has('status_id'))
+        {
+            return $this->response(null, 
+                [OrderResource::collection(auth()->user()->orders()->where('status_id', request('status_id'))->paginate(10))]
+            );    
+        }
+        return $this->response(null, [
+            OrderResource::collection(auth()->user()->orders()->paginate(2))
+        ]);
     }
 
 

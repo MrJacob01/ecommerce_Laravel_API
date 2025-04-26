@@ -12,7 +12,7 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs;
 
 
-    public function response($message, array $data=null): JsonResponse
+    public function response($message, $data=null): JsonResponse
     {
         return response()->json([
             'status'=>'responed',
@@ -21,7 +21,7 @@ class Controller extends BaseController
         ]);
     }
 
-    public function success($message, array $data=null): JsonResponse
+    public function success($message, $data=null): JsonResponse
     {
         return response()->json([
             'success'=>true,
@@ -32,7 +32,7 @@ class Controller extends BaseController
     }
 
 
-    public function error($message, array $data=null): JsonResponse
+    public function error($message, $data=null): JsonResponse
     {
         return response()->json([
             'success'=>false,

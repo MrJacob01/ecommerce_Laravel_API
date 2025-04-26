@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\UserSetting;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -19,6 +20,7 @@ class UserResource extends JsonResource
             "phone"=> $this->phone,
             "email_verified_at"=> $this->email_verified_at,
             "created_at"=> $this->created_at,
+            "settings"=>UserSettingResource::collection($this->userSetting)
         ];
     }
 }
