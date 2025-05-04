@@ -3,7 +3,7 @@
 
 
 # APIs on Postman Documentation 
-[https://run.pstmn.io/button.svg](https://documenter.getpostman.com/view/41961386/2sB2iwEZo5).
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://documenter.getpostman.com/view/41961386/2sB2iwEZo5)
 
 Welcome to the **Ecommerce Backend API** repository for mid-level PHP
 
