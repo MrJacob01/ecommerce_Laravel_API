@@ -1,5 +1,5 @@
 # Ecommerce Backend API
-<img src="Ecommerce project.drawio.png" alt="UI Screenshot" width="800" height="400">
+<img src="Ecommerce project.png" alt="UI Screenshot" width="800" height="400">
 
 
 # APIs on Postman Documentation 
