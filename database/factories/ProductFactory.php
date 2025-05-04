@@ -17,7 +17,7 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            "category_id"=>1,
+            "category_id"=>rand(1, 3),
             "name"=>[
                 'uz'=>fake()->sentence(2),
                 'en'=>fake()->sentence(2),

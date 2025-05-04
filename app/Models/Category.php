@@ -12,9 +12,19 @@ class Category extends Model
     /** @use HasFactory<\Database\Factories\CategoryFactory> */
     use HasFactory, HasTranslations;
 
-    protected $fillable = ["name", "icon"];
+    protected $fillable = ["parent_id", "name", "icon"];
 
     public array $translatable = ["name"];
+
+    public function ChildCategories()
+    {
+        return $this->hasMany(self::class, 'parent_id', 'id');
+    }
+
+    public function ParentCategory()
+    {
+        return $this->belongsTo(self::class, 'parent_id', 'id');
+    }
 
 
     public function products(): HasMany 

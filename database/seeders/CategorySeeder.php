@@ -13,10 +13,17 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        Category::create ([
+        $category = Category::create ([
             'name'=>[
                 'uz'=>'Ichimliklar',
                 'en'=>'Drinks'
+            ],
+        ]);
+
+        $category->ChildCategories()->create([
+            'name'=>[
+                'uz'=>'gazlangan',
+                'en'=>'sparked'
             ],
         ]);
 

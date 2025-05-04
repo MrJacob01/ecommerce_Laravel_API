@@ -28,6 +28,8 @@ Route::post('register', [AuthController::class, 'register']);
 Route::post('logout', [AuthController::class, 'logout']);
 Route::get('user', [AuthController::class, 'user'])->middleware('auth:sanctum');
 
+Route::get('products/{product}/related', [ProductController::class, 'related']);
+
 Route::apiResources([
     'orders'=>OrderController::class,
     'reviews'=>ReviewController::class,

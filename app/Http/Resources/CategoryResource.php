@@ -17,6 +17,13 @@ class CategoryResource extends JsonResource
         return [
             'id'=>$this->id,
             'name'=>$this->getTranslations('name'),
+            /**
+            * If you want to display child of parent's child like a tree then change this
+            * 'childCategories'=>$this->ChildCategories,     ->   'childCategories'=>self::collection($this->ChildCategories),
+            */
+
+            'childCategories'=>$this->ChildCategories,
+            'icon'=>$this->icon
         ];
     }
 }

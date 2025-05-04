@@ -64,4 +64,16 @@ class ProductController extends Controller
     {
         //
     }
+
+
+    public function related(Product $product)
+    {
+        return $this->response(null,
+            ProductResource::collection(Product::query()
+            ->where('category_id', $product->category_id)
+            ->limit(5)
+            ->get()
+            )
+        );
+    }
 }

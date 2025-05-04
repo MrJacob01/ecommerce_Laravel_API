@@ -29,7 +29,7 @@ class CategoryController extends Controller
 
     public function show(Category $category)
     {
-        return $this->response(null, [$category]);
+        return $this->response(null, new CategoryResource($category));
     }
 
     public function edit(Category $category)
