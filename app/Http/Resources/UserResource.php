@@ -20,6 +20,8 @@ class UserResource extends JsonResource
             "phone"=> $this->phone,
             "email_verified_at"=> $this->email_verified_at,
             "created_at"=> $this->created_at,
+            "roles" => $this->getRoleNames(),
+            "permissions"=>$this->getAllPermissions(),
             "settings"=>UserSettingResource::collection($this->userSetting)
         ];
     }

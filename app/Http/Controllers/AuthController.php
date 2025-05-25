@@ -24,7 +24,7 @@ class AuthController extends Controller
                 'email' => ['The provided credentials are incorrect.'],
             ]);
         }
-        return response()->json([
+        return $this->response([null,
             "Token" => $user->createToken($request->email)->plainTextToken
         ]);
     }
@@ -38,6 +38,9 @@ class AuthController extends Controller
     }
 
     public function user(Request $request) {
-        return new UserResource($request->user());
+        // return new UserResource($request->user());
+        return $this->response(null, new UserResource($request->user()));
+        
+        
     }
 }

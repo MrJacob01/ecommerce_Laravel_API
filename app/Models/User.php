@@ -10,17 +10,20 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var list<string>
      */
+  
+
     protected $fillable = [
         'username',
         'firstname',
@@ -53,10 +56,6 @@ class User extends Authenticatable
     }
 
 
-    public function roles(): BelongsToMany
-    {
-       return $this->belongsToMany(Role::class);
-    }
 
     public function favorites(): BelongsToMany {
         return $this->belongsToMany(Product::class);

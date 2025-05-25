@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoreProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DeliveryMethodController;
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('products/{product}/related', [ProductController::class, 'related']);
+
 
 Route::apiResources([
     'orders'=>OrderController::class,
